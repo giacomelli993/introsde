@@ -32,7 +32,7 @@
         <taskdef name="java2wsdl"
                  classname="org.apache.ws.java2wsdl.Java2WSDLTask"
                  classpathref="axis2.classpath"/>
-        <java2wsdl className="pojos.HealthProfileReader"
+        <java2wsdl className="(default package.HealthProfileReader"
                    outputLocation="${build.dir}"
                    targetNamespace="http://health.samples/"
                    schemaTargetNamespace="http://health.samples/xsd">
@@ -41,24 +41,6 @@
                 <pathelement location="${build.dir}/classes"/>
             </classpath>
         </java2wsdl>
-    	<java2wsdl className="pojos.HealthProfile"
-    	                   outputLocation="${build.dir}"
-    	                   targetNamespace="http://health2.samples/"
-    	                   schemaTargetNamespace="http://health2.samples/xsd">
-    	            <classpath>
-    	                <pathelement path="${axis2.classpath}"/>
-    	                <pathelement location="${build.dir}/classes"/>
-    	            </classpath>
-    	        </java2wsdl>
-    	<java2wsdl className="pojos.Person"
-    	                   outputLocation="${build.dir}"
-    	                   targetNamespace="http://health3.samples/"
-    	                   schemaTargetNamespace="http://health3.samples/xsd">
-    	            <classpath>
-    	                <pathelement path="${axis2.classpath}"/>
-    	                <pathelement location="${build.dir}/classes"/>
-    	            </classpath>
-    	        </java2wsdl>
     </target>
 
     <target name="generate.service" depends="compile.service">
@@ -98,3 +80,4 @@
         <delete dir="${build.dir}"/>
     </target>
 </project>
+
